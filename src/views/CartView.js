@@ -3,7 +3,6 @@ import {
 	Button,
 	Card,
 	Col,
-	Form,
 	FormSelect,
 	Image,
 	ListGroup,
@@ -13,10 +12,10 @@ import {
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useLocation, useMatch, useNavigate } from 'react-router-dom'
 import { addToCart, removeFromCart } from '../actions/cartActions'
-import Loader from '../components/Loader'
-import Message from '../components/Message'
-import Product from '../components/Product'
-import ProductView from './ProductView'
+// import Loader from '../components/Loader'
+// import Message from '../components/Message'
+// import Product from '../components/Product'
+// import ProductView from './ProductView'
 
 function CartView() {
 	const match = useMatch('/cart/:id')
@@ -28,7 +27,7 @@ function CartView() {
 
 	const cart = useSelector((state) => state.cart)
 	const { cartItems } = cart
-	const message = 'Cart is empty: ' + <Link to='/'>Go Back</Link>
+	// const message = 'Cart is empty: ' + <Link to='/'>Go Back</Link>
 
 	useEffect(() => {
 		if (productId) {
