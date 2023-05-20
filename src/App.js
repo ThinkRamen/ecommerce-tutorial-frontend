@@ -7,6 +7,7 @@ import CartView from './views/CartView'
 import HomeView from './views/HomeView'
 import ProductView from './views/ProductView'
 import LoginView from './views/LoginView'
+import RegisterView from './views/RegisterView'
 
 function App() {
 	return (
@@ -19,6 +20,7 @@ function App() {
 						<Route path='/product/:id' element={<ProductView />} />
 						<Route path='/cart/:id?' element={<CartView />} />
 						<Route path='/login' element={<LoginView />} />
+						<Route path='/register' element={<RegisterView />} />
 					</Routes>
 				</Container>
 			</main>
