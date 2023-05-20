@@ -13,7 +13,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link, useLocation, useMatch, useNavigate } from 'react-router-dom'
 import { addToCart, removeFromCart } from '../actions/cartActions'
 // import Loader from '../components/Loader'
-// import Message from '../components/Message'
+import Message from '../components/Message'
 // import Product from '../components/Product'
 // import ProductView from './ProductView'
 
@@ -27,7 +27,6 @@ function CartView() {
 
 	const cart = useSelector((state) => state.cart)
 	const { cartItems } = cart
-	// const message = 'Cart is empty: ' + <Link to='/'>Go Back</Link>
 
 	useEffect(() => {
 		if (productId) {
@@ -47,14 +46,10 @@ function CartView() {
 		<Row>
 			<Col md={8}>
 				<h1>Shopping Cart</h1>
-				{/* Message component should go here instead of h3, but it throws error:
-				Objects are not valid as a React child (found: object with keys {}).
-				If you meant to render a collection of children, use an array instead.
-				*/}
 				{cartItems.length === 0 ? (
-					<h3 style={{ color: 'red' }}>
-						YOUR CART IS empty <Link to='/'>Go Back</Link>
-					</h3>
+					<Message variant='danger'>
+						YOUR SHOPPING CART IS EMPTY <Link to='/'>GO BACK</Link>
+					</Message>
 				) : (
 					<ListGroup variant='flush'>
 						{cartItems.map((item) => (
