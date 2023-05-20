@@ -54,7 +54,7 @@ export const register = (name, email, password) => async (dispatch) => {
 			'/api/users/register/',
 			{
 				name: name,
-				username: email,
+				email: email,
 				password: password
 			},
 			config
@@ -62,6 +62,11 @@ export const register = (name, email, password) => async (dispatch) => {
 
 		dispatch({
 			type: USER_REGISTER_SUCCESS,
+			payload: data
+		})
+
+		dispatch({
+			type: USER_LOGIN_SUCCESS,
 			payload: data
 		})
 		localStorage.setItem('userInfo', JSON.stringify(data))
