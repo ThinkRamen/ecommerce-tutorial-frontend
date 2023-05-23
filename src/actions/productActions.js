@@ -1,4 +1,4 @@
-import axios from '../axiosConfig'
+import axios from 'axios'
 import {
 	PRODUCT_DETAILS_FAIL,
 	PRODUCT_DETAILS_REQUEST,
